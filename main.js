@@ -33,7 +33,7 @@ var initHttpServer = () => {
     app.use(bodyParser.json());
 
     app.get('/blocks', (req, res) => res.send(JSON.stringify(blockchain)));
-    app.post('/mineBlock', (req, res) => {
+    app.post('/nextBlock', (req, res) => {
 
         var newBlock = generateNextBlock(req.body.data);
         addBlock(newBlock);
