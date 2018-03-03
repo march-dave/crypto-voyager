@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Crypto Voyager</title>
+    <style>
+        .wrapper {
+            display: flex;
+        }
+        /* header,
+        .header {
+            background-color: blue;
+            height: 20vh;
+        } */
+        
+        img {
+            border-radius: 50%;
+        }
+        
+        main {
+            background-color: #455A64;
+            padding: 1rem 2rem;
+            flex: 6;
+        }
+        
+        .nav {
+            background-color: #7C4DFF;
+            padding: 1rem 2rem;
+            flex: 2;
+            height: 580px;
+        }
+        /* footer {
+            background-color: green;
+            height: 20vh;
+            clear: both;
+        } */
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <header></header> -->
+    <div class="wrapper">
+
+        <nav class="nav left">
+            <p>
+                <img src="https://68.media.tumblr.com/tumblr_lyyc0tdGiw1qem0fvo1_1280.jpg" alt="Paris" width="300" height="300">
+            </p>
+            <p>
+                <font color="white" size="15px">Name: Mike </font>
+            </p>
+        </nav>
+
+        <main>
+            <h1>
+                <font color="#BDBDBD ">Info</font>
+            </h1>
+            <p>
+                <button>Token Icon</button>
+            </p>
+
+            <p>
+                <div id="#div1">div</div>
+            </p>
+
+        </main>
+
+        <script>
+            $(document).ready(function() {
+
+                $("button").click(function() {
+
+                    console.log('button');
+
+                    $.ajax({
+                        type: 'POST',
+                        // type: 'GET',
+                        dataType: 'jsonp',
+                        url: "http://localhost:3001/blocks",
+                        // url: "https://jsonplaceholder.typicode.com/posts/1",
+                        success: function(result) {
+
+                            console.log('result: ');
+                            console.log('result: ' + JSON.stringify(result));
+                            console.log('result: ');
+
+                            // $("#div1").html(result);
+                        }
+                    });
+                });
+
+
+
+            });
+        </script>
+
+        <!-- <nav class="nav right ">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque tempore officiis odio quod, maiores sit rem magni fuga aut eaque. Magnam impedit tempore, doloribus necessitatibus eius. Cum quod suscipit impedit maiores unde pariatur, architecto
+                tenetur illum porro. Ut ullam repudiandae consequuntur beatae quibusdam ipsam ab ipsa vero eos culpa, natus.</p>
+        </nav> -->
+
+    </div>
+    <!-- <footer></footer> -->
+
+</body>
+
+</html>
