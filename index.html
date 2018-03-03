@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <title>Crypto Voyager</title>
     <style>
         .wrapper {
@@ -39,6 +39,17 @@
             height: 20vh;
             clear: both;
         } */
+        
+        #info {
+            font-size: 25px;
+            color: white;
+        }
+        
+        button {
+            border: none;
+            background-image: url('https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/610/558/datas/gallery.jpg') no-repeat top left;
+            padding: 2px 8px;
+        }
     </style>
 
     <title>Document</title>
@@ -53,21 +64,30 @@
             <p>
                 <img src="https://68.media.tumblr.com/tumblr_lyyc0tdGiw1qem0fvo1_1280.jpg" alt="Paris" width="300" height="300">
             </p>
-            <p>
-                <font color="white" size="15px">Name: Mike </font>
+            <p id="info">
+                Name: Mike
             </p>
         </nav>
 
         <main>
             <h1>
-                <font color="#BDBDBD ">Info</font>
+                <font color="#BDBDBD "></font>
             </h1>
             <p>
-                <button>Token Icon</button>
+                <button>Music Icon</button>
+                <!-- 
+                <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/610/558/datas/gallery.jpg" width="35" height="30"> -->
+                <div id="music-data"></div>
+
+                <br />
+                <br />
+                <br />
+
+                <button id="send">Click Music</button>
+
             </p>
 
             <p>
-                <div id="#div1">div</div>
             </p>
 
         </main>
@@ -75,32 +95,41 @@
         <script>
             $(document).ready(function() {
 
+                $("#send").click(function() {
+                    $.post("http://localhost:3001/nextBlock", {
+                            data: "list-" + Math.random()
+                        },
+                        function(data, status) {
+                            alert("Data: " + data + "\nStatus: " + status);
+                        });
+                });
+
+
                 $("button").click(function() {
 
                     console.log('button');
 
-                    $.ajax({
-                        type: 'GET',
-                        // type: 'GET',
-                        dataType: 'jsonp',
-                        url: "https://fast-woodland-70297.herokuapp.com/blocks",
-                        // url: "http://localhost:3001/blocks",
-                        // url: "https://jsonplaceholder.typicode.com/posts/1",
-                        success: function(result) {
 
-                            console.log('result: ');
-                            console.log('result: ' + JSON.stringify(result));
-                            console.log('result: ');
-
-                            // $("#div1").html(result);
-                        },
-                        error: function(result) {
-                            console.log("The request error" + JSON.stringify(result));
-                        },
-                        fail: function(result) {
-                            console.log("The request failed" + JSON.stringify(result));
+                    var settings = {
+                        "dataType": "json",
+                        "crossDomain": true,
+                        "url": "http://localhost:3001/blocks",
+                        "method": "GET",
+                        "headers": {
+                            "Cache-Control": "no-cache"
                         }
+                    }
+
+                    $.ajax(settings).done(function(response) {
+                        console.log(response);
+
+                        $("#music-data").append(JSON.stringify(response));
+
+                        console.log('error' + JSON.stringify(response));
+                    }).error(function(response) {
+
                     });
+
                 });
 
             });

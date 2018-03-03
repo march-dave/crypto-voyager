@@ -22,7 +22,7 @@ class Block {
 // data: this genesis block!!
 // hash: a9d9999af5983ce47ea33feee41a35a076a5c2c4cc6da73edac32227d046c0c6
 var getGenesisBlock = () => {
-    return new Block(0, "0", 1520098489.815, "this genesis block!!", "a9d9999af5983ce47ea33feee41a35a076a5c2c4cc6da73edac32227d046c0c6");
+    return new Block(0, "0", "1520098489.815", "this genesis block!!", "a9d9999af5983ce47ea33feee41a35a076a5c2c4cc6da73edac32227d046c0c6");
 };
 
 var blockchain = [getGenesisBlock()];
@@ -33,13 +33,21 @@ var initHttpServer = () => {
     app.use(bodyParser.urlencoded());
     app.use(bodyParser.json());
 
-    app.get('/blocks', (req, res) => res.send(JSON.stringify(blockchain)));
+    app.get('/blocks', (req, res) => {
+
+        console.log('get' + JSON.stringify(blockchain));
+
+        res.send(
+            JSON.stringify(blockchain)
+            // blockchain
+        )
+    });
     app.post('/nextBlock', (req, res) => {
 
         var newBlock = generateNextBlock(req.body.data);
         addBlock(newBlock);
 
-        console.log('block added: ' + JSON.stringify(newBlock));
+        // console.log('block added: ' + JSON.stringify(newBlock));
         res.send();
     });
 
