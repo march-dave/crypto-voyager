@@ -3,7 +3,8 @@ var CryptoJS = require("crypto-js");
 var express = require("express");
 var bodyParser = require('body-parser');
 
-var http_port = process.env.HTTP_PORT || 3001;
+// var http_port = process.env.HTTP_PORT || 3001;
+var http_port = process.env.PORT || 3001;
 
 class Block {
     constructor(index, previousHash, timestamp, data, hash) {
