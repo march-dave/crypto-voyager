@@ -39,7 +39,6 @@ var initHttpServer = () => {
 
         res.send(
             JSON.stringify(blockchain)
-            // blockchain
         )
     });
     app.post('/nextBlock', (req, res) => {
@@ -47,7 +46,6 @@ var initHttpServer = () => {
         var newBlock = generateNextBlock(req.body.data);
         addBlock(newBlock);
 
-        // console.log('block added: ' + JSON.stringify(newBlock));
         res.send();
     });
 
