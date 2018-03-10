@@ -4,7 +4,7 @@ var express = require("express");
 var bodyParser = require('body-parser');
 
 var http_port = process.env.PORT || 3001;
-
+var p2p_port = process.env.P2P_PORT || 6001;
 class Block {
     constructor(index, previousHash, timestamp, data, hash) {
         this.index = index;
