@@ -7,6 +7,12 @@ var http_port = process.env.PORT || 3001;
 ////
 var p2p_port = process.env.P2P_PORT || 6001;
 var initialPeers = process.env.PEERS ? process.env.PEERS.split(',') : [];
+var sockets = [];
+var MessageType = {
+    QUERY_LATEST: 0,
+    QUERY_ALL: 1,
+    RESPONSE_BLOCKCHAIN: 2
+};
 ////
 class Block {
     constructor(index, previousHash, timestamp, data, hash) {
