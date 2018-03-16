@@ -50,7 +50,7 @@ var initHttpServer = () => {
     app.post('/nextBlock', (req, res) => {
         var newBlock = generateNextBlock(req.body.data);
         addBlock(newBlock);
-        // broadcast(responseLatestMsg());
+        console.log('block added: ' + JSON.stringify(newBlock));
         res.send();
     });
 
