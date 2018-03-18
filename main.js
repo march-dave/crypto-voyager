@@ -13,6 +13,7 @@ var http_port = process.env.PORT || 3001;
 //     QUERY_ALL: 1,
 //     RESPONSE_BLOCKCHAIN: 2
 // };
+// var blockchain = [getGenesisBlock()];
 ////
 class Block {
     constructor(index, previousHash, timestamp, data, hash) {
