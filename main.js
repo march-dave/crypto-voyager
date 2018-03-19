@@ -54,6 +54,13 @@ var initHttpServer = () => {
         console.log('block added: ' + JSON.stringify(newBlock));
         res.send();
     });
+    // app.post('/mineBlock', (req, res) => {
+    //     var newBlock = generateNextBlock(req.body.data);
+    //     addBlock(newBlock);
+
+    //     console.log('block added: ' + JSON.stringify(newBlock));
+    //     res.send();
+    // });
 
     // app.post('/addPeer', (req, res) => {
     //     connectToPeers([req.body.peer]);
