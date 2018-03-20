@@ -66,6 +66,9 @@ var initHttpServer = () => {
     //     connectToPeers([req.body.peer]);
     //     res.send();
     // });
+    // app.get('/perspectiveOrigin', (req, res) => {
+    //     res.send(sockets.map(s => s._socket.remoteAddress + ':' + s._socket.remotePort));
+    // });
     app.listen(http_port, () => console.log('Listening http on port: ' + http_port));
 };
 
