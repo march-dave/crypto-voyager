@@ -66,9 +66,9 @@ var initHttpServer = () => {
     //     connectToPeers([req.body.peer]);
     //     res.send();
     // });
-    app.get('/perspectiveOrigin', (req, res) => {
-        res.send(sockets.map(s => s._socket.remoteAddress + ':' + s._socket.remotePort));
-    });
+    // app.get('/perspectiveOrigin', (req, res) => {
+    //     res.send(sockets.map(s => s._socket.remoteAddress + ':' + s._socket.remotePort));
+    // });
     // app.post('/addPeer', (req, res) => {
     //     connectToPeers([req.body.peer]);
     //     res.send();
