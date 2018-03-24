@@ -71,6 +71,7 @@ var initHttpServer = () => {
     // });
     // app.post('/addPeer', (req, res) => {
     //     connectToPeers([req.body.peer]);
+    //     console.log('block added: ' + JSON.stringify(req.body.peer));
     //     res.send();
     // });
     app.listen(http_port, () => console.log('Listening http on port: ' + http_port));
