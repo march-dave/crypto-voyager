@@ -10,3 +10,18 @@ https://unsplash.com/
 http://www.lifeofpix.com/
 
 https://design.google/library/
+
+class PORTFOLIO {
+    string PortfolioName;
+    string PortfolioCode;
+    decimal MarketValue;
+
+    PORTFOLIOSHARECLASS shareClass;
+}
+
+class PORTFOLIOSHARECLASS {
+    string PortfolioName;
+    string PortfolioShareClassName;
+    string PortfolioShareClassCode;
+    float PortfolioShareClassBaseFee;
+}
