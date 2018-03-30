@@ -42,3 +42,9 @@ var gomuClone2 = new gomu.constructor('고무곰_클론2', 25);
  var gomuClone3 = new gomuProto.constructor('고무곰_클론3', 20);
 
  var gomuClone4 = new Person.prototype.constructor('고무곰_클론4', 15);
+
+ ?) var gomu = new Person('', 30);
+ var gomuClone1 = new gomu.__proto__.constructor('', 10);
+var gomuClone2 = new gomu.constructor('', 25);
+
+// Is it same gomu.__proto__.constructor === gomu.constuctor
