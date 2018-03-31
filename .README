@@ -48,3 +48,12 @@ var gomuClone2 = new gomu.constructor('고무곰_클론2', 25);
 var gomuClone2 = new gomu.constructor('', 25);
 
 // Is it same gomu.__proto__.constructor === gomu.constuctor
+
+
+
+function Person(n, a) {
+    this.name = n;
+    this.age = a;
+}
+
+var gomu = new Person('고무곰', 30);
