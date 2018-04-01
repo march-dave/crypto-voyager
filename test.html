@@ -1,0 +1,115 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="cars">
+        <select id="selectCar"> 
+            <option value="1">Ford</option> 
+            <option value="2">Chrysler</option> 
+        </select>
+    </form>
+
+    var a = document.createElement("option"); a.value = "3"; a.appendChild(document.createTextNode("Mercedes")); document.forms["cars"]["selectCar"].appendChild(a)
+
+</body>
+
+</html> -->
+
+<!-- <head>
+    <title></title>
+    <script>
+        function addEvent(obj, type, fn) {
+            if (obj.addEventListener) {
+                obj.addEventListener(type, fn, false);
+                EventCache.add(obj, type, fn);
+            } else if (obj.attachEvent) {
+                obj["e" + type + fn] = fn;
+                obj[type + fn] = function() {
+                    obj["e" + type + fn](window.event);
+                }
+                obj.attachEvent("on" + type, obj[type + fn]);
+            } else obj["on" + type] = obj["e" + type + fn];
+        }
+
+        function function1() {
+            alert('y');
+        }
+    </script>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <input id="Text1" type="text" />
+        <input id="Button1" type="button" value="button" />
+    </form>
+</body> -->
+
+<!-- a = typeof new Number(0); object
+
+var arrOne = ["Hello", "World"]; 
+var arrTwo = ["Cat", "Dog"]; 
+var arrThree = ["Red", "Blue"]; 
+
+var str = arrTwo.concat(arrOne, arrThree).join(" ");
+
+
+var x = 9;
+x = x >> 2;
+x = x << 2;
+x = x ^ 3; 
+document.writeln(x); -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body onLoad="hi()" onUnload="bye()">
+
+    <script>
+        var nm = "";
+
+        function hi() {
+            nm = prompt("Hello! Your name?", "");
+        }
+
+        function bye() {
+            alert("Goodbye " + nm);
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form name="frm">
+        <INPUT type=radio name=test value=1 checked>1
+        <INPUT type=radio name=test value=2>2
+    </form>
+
+</body>
+
+</html>
