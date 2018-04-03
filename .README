@@ -56,4 +56,29 @@ function Person(n, a) {
     this.age = a;
 }
 
-var gomu = new Person('고무곰', 30);
+var emp = new Person('john', 11);
+
+
+var fs = require('fs');
+var csv = require('csv');
+var parse = require('csv-parse');
+
+function PORTFOLIO(Fone, Ftwo, Fthree) {
+    this.PortfolioName = Fone;
+    this.PortfolioCode = Ftwo;
+    this.MarketValue = Fthree;
+};
+
+var MyData = [];
+// 'Portfolio.CSV'
+// PortfolioShareClass.CSV
+// fs.createReadStream('PortfolioShareClass.CSV')
+
+var generator = csv.generate({ seed: 1, columns: 2, length: 20 });
+var parser = csv.parse();
+var transformer = csv.transform(function(data) {
+    return data.map(function(value) { return value.toUpperCase() });
+});
+var stringifier = csv.stringify();
+
+console.log(transformer);
