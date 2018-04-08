@@ -174,3 +174,9 @@ stringifier.on('readable', function() {
         process.stdout.write(data);
     }
 });
+
+function PORTFOLIO(Fone, Ftwo, Fthree) {
+    this.PortfolioName = Fone;
+    this.PortfolioCode = Ftwo;
+    this.MarketValue = Fthree;
+};
