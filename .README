@@ -186,3 +186,27 @@ function PORTFOLIO(Fone, Ftwo, Fthree) {
         process.stdout.write(data);
     }
 });
+
+transformer.on('readable', function() {
+    while (data = transformer.read()) {
+        stringifier.write(data);
+    }
+});
+
+stringifier.on('readable', function() {
+    while (data = stringifier.read()) {
+        process.stdout.write(data);
+    }
+});
+
+function PORTFOLIO(Fone, Ftwo, Fthree) {
+    this.PortfolioName = Fone;
+    this.PortfolioCode = Ftwo;
+    this.MarketValue = Fthree;
+};
+
+ stringifier.on('readable', function() {
+    while (data = stringifier.read()) {
+        process.stdout.write(data);
+    }
+});
