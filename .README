@@ -223,8 +223,3 @@ function PORTFOLIO(Fone, Ftwo, Fthree) {
     }
 });
 
-stringifier.on('readable', function() {
-    while (data = stringifier.read()) {
-        process.stdout.write(data);
-    }
-});
