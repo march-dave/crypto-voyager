@@ -211,15 +211,5 @@ function PORTFOLIO(Fone, Ftwo, Fthree) {
     }
 });
 
-function PORTFOLIO(Fone, Ftwo, Fthree) {
-    this.PortfolioName = Fone;
-    this.PortfolioCode = Ftwo;
-    this.MarketValue = Fthree;
-};
 
- stringifier.on('readable', function() {
-    while (data = stringifier.read()) {
-        process.stdout.write(data);
-    }
-});
 
