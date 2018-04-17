@@ -49,8 +49,6 @@ var gomuClone2 = new gomu.constructor('', 25);
 
 // Is it same gomu.__proto__.constructor === gomu.constuctor
 
-
-
 function Person(n, a) {
     this.name = n;
     this.age = a;
