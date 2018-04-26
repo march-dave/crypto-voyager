@@ -55,5 +55,7 @@ var gomuClone2 = new gomu.constructor('', 25);
 //}
 
 //var emp = new Person('john', 11);
+//var emp = new Person('Jane', 10);
+
 
 
