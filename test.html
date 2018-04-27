@@ -55,66 +55,52 @@
         <input id="Button1" type="button" value="button" />
     </form>
 </body>
-<!--
-a = typeof new Number(0); object
 
-var arrOne = ["Hello", "World"]; 
-var arrTwo = ["Cat", "Dog"]; 
-var arrThree = ["Red", "Blue"]; 
+a = typeof new Number(0); object var arrOne = ["Hello", "World"]; var arrTwo = ["Cat", "Dog"]; var arrThree = ["Red", "Blue"]; var str = arrTwo.concat(arrOne, arrThree).join(" "); var x = 9; x = x >> 2; x = x
+<< 2; x=x ^ 3; document.writeln(x); <!DOCTYPE html>
+    <html lang="en">
 
-var str = arrTwo.concat(arrOne, arrThree).join(" ");
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
 
+    <body onLoad="hi()" onUnload="bye()">
 
-var x = 9;
-x = x >> 2;
-x = x << 2;
-x = x ^ 3; 
-document.writeln(x); -->
+        <script>
+            var nm = "";
 
-<!DOCTYPE html>
-<html lang="en">
+            function hi() {
+                nm = prompt("Hello! Your name?", "");
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+            function bye() {
+                alert("Goodbye " + nm);
+            }
+        </script>
+    </body>
 
-<body onLoad="hi()" onUnload="bye()">
+    </html>
 
-    <script>
-        var nm = "";
+    <!DOCTYPE html>
+    <html lang="en">
 
-        function hi() {
-            nm = prompt("Hello! Your name?", "");
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
 
-        function bye() {
-            alert("Goodbye " + nm);
-        }
-    </script>
-</body>
+    <body>
 
-</html>
+        <form name="frm">
+            <INPUT type=radio name=test value=1 checked>1
+            <INPUT type=radio name=test value=2>2
+        </form>
 
-<!DOCTYPE html>
-<html lang="en">
+    </body>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-
-    <form name="frm">
-        <INPUT type=radio name=test value=1 checked>1
-        <INPUT type=radio name=test value=2>2
-    </form>
-
-</body>
-
-</html>
+    </html>
