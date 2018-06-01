@@ -3,6 +3,8 @@ var CryptoJS = require("crypto-js");
 var express = require("express");
 var bodyParser = require('body-parser');
 
+const chp = require('chainpoint-client');
+
 var http_port = process.env.PORT || 3001;
 ////
 // var p2p_port = process.env.P2P_PORT || 6001;
@@ -49,12 +51,19 @@ var initHttpServer = () => {
         )
     });
     app.post('/nextBlock', (req, res) => {
+
+        const ret = runIt(CryptoJS.SHA256(newBlock).toString());
+
+        // var newBlock = generateNextBlock(req.body.data + JSON.stringify(ret));
         var newBlock = generateNextBlock(req.body.data);
         addBlock(newBlock);
-        console.log('block added: ' + JSON.stringify(newBlock));
+        console.log('block added: ' + JSON.stringify(newBlock))
+        
+        console.log('Proof Objects:----------- ' + JSON.stringify(ret) );
+
         res.send();
     });
-    
+
     // app.post('/mineBlock', (req, res) => {
     //     var newBlock = generateNextBlock(req.body.data);
     //     addBlock(newBlock);
@@ -124,6 +133,31 @@ var isValidNewBlock = (newBlock, previousBlock) => {
 var getLatestBlock = () => blockchain[blockchain.length - 1];
 initHttpServer();
 
+
+async function runIt (newBlock) {
+  // A few sample SHA-256 proofs to anchor
+  // let hashes = ['3d2a9e92b561440e8d27a21eed114f7018105db00262af7d7087f7dea9986b0a']
+    let hashes = [newBlock];
+
+  // Submit each hash to three randomly selected Nodes
+  let proofHandles = await chp.submitHashes(hashes)
+  console.log("Submitted Proof Objects: Expand objects below to inspect.")
+  console.log(proofHandles)
+
+  // Wait for Calendar proofs to be available
+  console.log("Sleeping 12 seconds to wait for proofs to generate...")
+  await new Promise(resolve => setTimeout(resolve, 12000))
+
+  // Retrieve a Calendar proof for each hash that was submitted
+  let proofs = await chp.getProofs(proofHandles)
+  console.log("Proof Objects: Expand objects below to inspect.")
+  console.log(proofs)
+
+  // Verify every anchor in every Calendar proof
+  let verifiedProofs = await chp.verifyProofs(proofs)
+  console.log("Verified Proof Objects: Expand objects below to inspect.")
+  console.log(verifiedProofs)
+}
 
 // var gomu = new Person('고무곰', 30);
 // var gomuClone1 = new gomu.__proto__.consturctor('고무곰_클론1', 10);
