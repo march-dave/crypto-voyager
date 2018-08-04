@@ -61,3 +61,4 @@ var gomuClone2 = new gomu.constructor('', 25);
 
 
 
+// var emp new Person('Dave', 28);
