@@ -79,3 +79,28 @@ var gomuClone2 = new gomu.constructor('', 25);
 //     return MappingExample().balances(this);
 //   }
 // }
+
+// Smart Contract Mapping
+// prgama solidity ^0.4.24;
+
+// contract MyContact {
+
+// struct {
+    // byte32 namd;
+    // 
+//}
+
+// mapping(byte32 => uint32) public BuyerInfo;
+
+// function set(bytes32 name, uint32 ) {
+
+//}
+
+// function get() {
+
+//}
+
+// function set() {
+
+//}
+
